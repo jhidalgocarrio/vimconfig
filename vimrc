@@ -89,7 +89,11 @@ endif
 let xterm16_colormap = "softlight"
 let xterm16_brightness = "default"
 "colorscheme xterm16
-colorscheme elflord 
+"colorscheme elflord 
+
+"improve autocomplete menu color
+highlight PMenu     cterm=bold ctermbg=Gray ctermfg=Black
+highlight PMenuSel  cterm=bold ctermbg=Red ctermfg=Gray
 
 " Quits diff mode if one of the diffed files is quit
 if v:version >= 700
