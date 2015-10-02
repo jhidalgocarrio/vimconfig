@@ -3,9 +3,17 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'vim-ruby/vim-ruby'
-"Bundle 'Valloric/YouCompleteMe'
-let g:ycm_confirm_extra_conf = 0
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'scrooloose/syntastic'
+Bundle 'flazz/vim-colorschemes'
+
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+
+let mapleader =","
+syntax enable
+filetype plugin indent on
+set ofu=syntaxcomplete#Complete
+
 "Bundle 'scrooloose/syntastic'
 
 " Misc
@@ -13,7 +21,7 @@ set hidden		" Make buffer hidden (instead of unloaded) when changing buffers. AT
                         " undo history is not lost on :edit or :bnext
 set modeline
 set showmatch		" Show matching brackets.
-set wrap                " Enable dynamic wrapping
+set nowrap              " Enable dynamic wrapping
 set linebreak           " Display dynamic wrapping linebreaks 
 set display=uhex   
 map <F12> :b #<CR>      " Jump to alternate buffer
@@ -57,6 +65,8 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=8
 set expandtab
+set cinwords=if,else,while,do,for,switch,case
+
 
 " Status line
 set showcmd		" Show (partial) command in status line.
@@ -67,6 +77,10 @@ set statusline=%-40.40f%<\ [%.20{getcwd()}]%h%r\ %=%l/%L,%c%10.n%14.PM
 
 " Save and restore last position in buffer
 :au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+
+" gvim specific
+set mousehide  " Hide mouse after chars typed
+set mouse=a  " Mouse in all modes
 
 " Ignore whitespace changes by default in diff
 set diffopt=filler,iwhite
@@ -86,9 +100,10 @@ if &term != "linux"
     set t_Co=256
 endif
 
-let xterm16_colormap = "softlight"
-let xterm16_brightness = "default"
+"let xterm16_colormap = "softlight"
+"let xterm16_brightness = "default"
 "colorscheme xterm16
+colorscheme colorful256
 "colorscheme elflord 
 
 "improve autocomplete menu color
@@ -150,3 +165,9 @@ if filereadable("/proc/sys/vm/laptop_mode")
     endif
 endif
 
+let Tlist_Ctags_Cmd = "/usr/bin/ctags"
+let Tlist_WinWidth = 50
+
+"Hardcopy printing to pdf
+set pdev=pdf
+set printoptions=paper:A4,syntax:y,wrap:y,duplex:long
