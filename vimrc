@@ -18,10 +18,16 @@ set ofu=syntaxcomplete#Complete
 
 " Misc
 set hidden		" Make buffer hidden (instead of unloaded) when changing buffers. AT LAST
-                        " undo history is not lost on :edit or :bnext
+ 
+set cf  " Enable error files & error jumping.
+set clipboard+=unnamed  " Yanks go on clipboard instead.
+set history=256  " Number of things to remember in history.
+set autowrite  " Writes on make/shell commands
+set ruler  " Ruler on
 set modeline
 set showmatch		" Show matching brackets.
 set nowrap              " Enable dynamic wrapping
+set nu  " Line numbers on
 set linebreak           " Display dynamic wrapping linebreaks 
 set display=uhex   
 map <F12> :b #<CR>      " Jump to alternate buffer
@@ -100,10 +106,10 @@ if &term != "linux"
     set t_Co=256
 endif
 
-"let xterm16_colormap = "softlight"
-"let xterm16_brightness = "default"
+let xterm16_colormap = "softlight"
+let xterm16_brightness = "default"
 "colorscheme xterm16
-colorscheme colorful256
+"colorscheme colorful256
 "colorscheme elflord 
 
 "improve autocomplete menu color
@@ -167,6 +173,8 @@ endif
 
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
+
+set spell "Spell checker ON
 
 "Hardcopy printing to pdf
 set pdev=pdf
