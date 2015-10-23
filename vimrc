@@ -132,3 +132,7 @@ set spell "Spell checker ON
 "Hardcopy printing to pdf
 set pdev=pdf
 set printoptions=paper:A4,syntax:y,wrap:y,duplex:long
+
+
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_collect_identifiers_from_tags_files = 1
