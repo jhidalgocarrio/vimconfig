@@ -8,6 +8,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
+Bundle 'vim-scripts/YankRing.vim'
 
 	
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
